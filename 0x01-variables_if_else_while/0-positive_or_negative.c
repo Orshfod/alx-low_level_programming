@@ -1,18 +1,21 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-/* Determine if the number is greater than 0: is positive
- * if the number is 0: is zero
- * if the number is less than 0: is negative
- * Return: 0 (success)
- 
+#include <stdio.h>
+/**
+ * main - assigns a random number to int n
+ * for numbers > zero, n is positive
+ * for numbers < zero, n is negative
+ * for numbers == 0 n is zero
+ * Return: Always 0 (success)
+ */
 int main(void)
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if (n < 0)
-	  {
+	if (n > 0)
+	{
 	printf("%d is positive\n", n);
 	}
 	else if (n == 0)
@@ -24,3 +27,4 @@ int main(void)
 	printf("%d is negative\n", n);
 	}
 	return (0);
+}
